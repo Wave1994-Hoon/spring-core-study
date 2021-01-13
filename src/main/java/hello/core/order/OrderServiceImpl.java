@@ -26,7 +26,10 @@ public class OrderServiceImpl implements OrderService{
     //  private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
 
-    /* 인터페이스에만 의존, 구현체에 대한 정보 모름 */
+    /*
+    * 정적인 객체 인스턴스 관계
+    * 인터페이스에만 의존, 구현체에 대한 정보 모름
+    */
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
@@ -37,6 +40,7 @@ public class OrderServiceImpl implements OrderService{
     * `OrderServiceImpl`은 이제부터 실행에만 집중하게 된다. (역할을 고르지 않아도됨)
     *  */
 
+    /* 동적인 객체 인스턴스 관계 */
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
