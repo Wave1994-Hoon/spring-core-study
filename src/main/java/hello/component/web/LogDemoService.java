@@ -2,7 +2,6 @@ package hello.component.web;
 
 import hello.component.common.MyLogger;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,7 +11,7 @@ public class LogDemoService {
     private final MyLogger myLogger;
 //    private final ObjectProvider<MyLogger> myLoggerProvider;
 
-    public void logic(String testId) {
+    public void logic(String id) {
 //        myLoggerProvider.getObject()
         myLogger.log("service id = " + id);
     }

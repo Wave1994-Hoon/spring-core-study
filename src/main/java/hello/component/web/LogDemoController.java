@@ -2,7 +2,6 @@ package hello.component.web;
 
 import hello.component.common.MyLogger;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,13 +18,12 @@ public class LogDemoController {
 
     @RequestMapping("log-demo")
     @ResponseBody
-    public String logDemo(HttpServletRequest request) {
+    public void logDemo(HttpServletRequest request) {
 //        MyLogger myLogger = myLoggerProvider.getObject(); // 필요한 시점에 가져 옴
         String requestURL = request.getRequestURL().toString();
         myLogger.setRequestURL(requestURL);
 
         myLogger.log("controller test");
         logDemoService.logic("testId");
-
     }
 }
